@@ -1,0 +1,14 @@
+Main.qml                          usr/share/sddm/themes/lingmo
+metadata.desktop                  usr/share/sddm/themes/lingmo
+qmldir                            usr/share/sddm/themes/lingmo
+LICENSE                           usr/share/sddm/themes/lingmo
+test.sh                           usr/share/sddm/themes/lingmo
+backgrounds                       usr/share/sddm/themes/lingmo
+components                        usr/share/sddm/themes/lingmo
+configs                           usr/share/sddm/themes/lingmo
+icons                             usr/share/sddm/themes/lingmo
+translations                      usr/share/sddm/themes/lingmo
+docs/previews/default.png         usr/share/sddm/themes/lingmo/docs/previews
+fonts/redhat                      usr/share/fonts/truetype/redhat-display
+fonts/redhat-vf                   usr/share/fonts/truetype/redhat-display
+fonts/OFL.txt                     usr/share/doc/sddm-theme-lingmo

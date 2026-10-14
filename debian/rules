@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+# translations/*.ts 是源文件；.qm 在构建时用 lrelease6 生成，
+# 这样仓库里不需要提交编译产物，翻译也总是最新的。
+override_dh_auto_build:
+	lrelease6 translations/*.ts

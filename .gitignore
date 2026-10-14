@@ -1,0 +1,14 @@
+# 构建产物（CI 会用 dpkg-buildpackage 重新生成）
+*.deb
+*.buildinfo
+*.changes
+*.dsc
+*.tar.*
+src-tar-output/
+debian/.debhelper/
+debian/files
+debian/*.substvars
+debian/*.debhelper
+debian/sddm-theme-lingmo/
+debian/tmp/
+debian/debhelper-build-stamp

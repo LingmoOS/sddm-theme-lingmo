@@ -1,0 +1,52 @@
+sddm-theme-lingmo for Lingmo OS
+==============================
+
+This theme is based on SilentSDDM (https://github.com/uiriansan/SilentSDDM); see the upstream project for
+the full documentation of the more than 200 configuration options.
+
+Enabling the theme
+------------------
+This package does not touch /etc/sddm.conf: other SDDM themes shipped by the
+distribution write that file too and would overwrite each other. Put a snippet
+in /etc/sddm.conf.d/ instead, for example
+/etc/sddm.conf.d/10-lingmo-theme.conf:
+
+    [General]
+    InputMethod=qtvirtualkeyboard
+    GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/lingmo/components/,QT_IM_MODULE=qtvirtualkeyboard
+
+    [Theme]
+    Current=lingmo
+
+Both [General] options are required: InputMethod selects the virtual keyboard
+and GreeterEnvironment points QML at the theme's own components directory.
+Restart SDDM after changing them.
+
+Note on conflicts
+-----------------
+/usr/share/sddm/themes/lingmo used to be provided by the lingmo-sddm-theme
+package, so this package declares Conflicts/Replaces against it. If you want
+both themes installed at the same time, one of them has to use a different
+directory and Theme-Id.
+
+Test before you reboot
+----------------------
+A broken theme can leave you without a login screen:
+
+    /usr/share/sddm/themes/lingmo/test.sh
+
+It runs sddm-greeter-qt6 in --test-mode (needs the sddm package installed).
+
+Requirements
+------------
+* SDDM 0.21 or newer (enforced by the package dependency).
+* Qt 6.5 or newer - the theme uses QtQuick.Effects (MultiEffect).
+
+Configuration
+-------------
+Presets live in /usr/share/sddm/themes/lingmo/configs/. Pick one by setting
+ConfigFile= in metadata.desktop, or copy a preset and edit it:
+
+    ConfigFile=configs/default.conf
+
+ -- Lingmo OS Team <team@lingmo.org>

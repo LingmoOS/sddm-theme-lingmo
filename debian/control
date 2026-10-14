@@ -1,0 +1,41 @@
+Source: sddm-theme-lingmo
+Section: x11
+Priority: optional
+Maintainer: Lingmo OS Team <team@lingmo.org>
+Build-Depends: debhelper-compat (= 13),
+               qt6-l10n-tools
+Standards-Version: 4.5.0
+Homepage: https://github.com/uiriansan/SilentSDDM
+Rules-Requires-Root: no
+
+Package: sddm-theme-lingmo
+Architecture: all
+Depends: sddm (>= 0.21),
+         qml6-module-qtquick,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-effects,
+         qml6-module-qtmultimedia,
+         qml6-module-qtquick-virtualkeyboard,
+         libqt6svg6,
+         qt6-image-formats-plugins,
+         ${misc:Depends}
+# 安装目录 /usr/share/sddm/themes/lingmo 原本由 lingmo-sddm-theme 占用，
+# 本包取代它（主题已由 SilentSDDM 品牌化而来）。
+Conflicts: lingmo-sddm-theme
+Replaces: lingmo-sddm-theme
+Description: Lingmo - the SDDM login theme for Lingmo OS
+ A lock screen and login screen for SDDM with static or animated
+ (video) backgrounds, per-screen background effects and more than
+ 200 options, shipped with preset colour schemes (Catppuccin,
+ Nord, Everforest, Gruvbox, Eldritch and others).
+ .
+ Based on SilentSDDM, with Lingmo OS branding, Chinese
+ translations (zh_CN, zh_TW, zh_HK) and Debian packaging added.
+ The original project is at
+ https://github.com/uiriansan/SilentSDDM
+ .
+ It requires SDDM 0.21 or newer and Qt 6.5 or newer. The theme
+ is installed to /usr/share/sddm/themes/lingmo; see
+ README.Debian for how to enable it.

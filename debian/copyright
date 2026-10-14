@@ -1,0 +1,31 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: SilentSDDM
+Upstream-Contact: uiriansan <https://github.com/uiriansan/SilentSDDM>
+Source: https://github.com/uiriansan/SilentSDDM
+Comment: This package is a rebranded fork of SilentSDDM for Lingmo OS. The theme
+ has been renamed to "lingmo", Chinese translations and Debian packaging were
+ added, and line endings were normalised. Copyright for the original work
+ remains with the SilentSDDM authors.
+
+Files: *
+Copyright: 2025 uiriansan and the SilentSDDM contributors
+License: GPL-3.0-or-later
+ This program is free software: you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version.
+ .
+ On Debian systems the full text of the GNU General Public License version 3
+ can be found in /usr/share/common-licenses/GPL-3.
+
+Files: debian/* translations/*
+Copyright: 2026 Lingmo OS Team <team@lingmo.org>
+License: GPL-3.0-or-later
+ Lingmo OS branding, Chinese translations and Debian packaging.
+
+Files: fonts/redhat fonts/redhat-vf
+Copyright: 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)
+License: OFL-1.1
+ The Red Hat Display fonts are licensed under the SIL Open Font License 1.1.
+ The full licence text is installed as
+ /usr/share/doc/sddm-theme-lingmo/OFL.txt.

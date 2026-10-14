@@ -1,0 +1,17 @@
+sddm-theme-lingmo (1.5.0.lingmo.1) helium; urgency=medium
+
+  * Initial packaging for Lingmo OS, based on SilentSDDM 1.5.0
+    (https://github.com/uiriansan/SilentSDDM).
+  * Rebrand to Lingmo: the theme name, Theme-Id and install directory
+    are now "lingmo". Because lingmo-sddm-theme already provides
+    /usr/share/sddm/themes/lingmo, this package declares
+    Conflicts/Replaces against it.
+  * Chinese translations (zh_CN, zh_TW, zh_HK). The theme's own strings
+    are wrapped in qsTr() and translations/*.ts are compiled to *.qm at
+    build time, so the login screen follows the system locale.
+  * Normalise line endings to LF. Upstream files arrived with CRLF,
+    which broke install.sh and test.sh with "bad interpreter".
+  * Ship the bundled Red Hat Display fonts under
+    /usr/share/fonts/truetype.
+
+ -- Lingmo OS Team <team@lingmo.org>  Wed, 14 Oct 2026 20:19:07 +0800
