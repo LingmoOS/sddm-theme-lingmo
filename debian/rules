@@ -3,7 +3,19 @@
 %:
 	dh $@
 
-# translations/*.ts 是源文件；.qm 在构建时用 lrelease6 生成，
-# 这样仓库里不需要提交编译产物，翻译也总是最新的。
+# translations/*.ts 是源文件，translations/*.qm 已经一起提交，保证不用 lrelease
+# 也能装上可用翻译。这里只在找得到 lrelease 时重新编译，让翻译保持最新；
+# 找不到就沿用已提交的 .qm（OBS 环境里 lrelease6 就可能不存在）。
 override_dh_auto_build:
-	lrelease6 translations/*.ts
+	@if command -v lrelease6 >/dev/null 2>&1; then \
+		echo "compiling translations with lrelease6"; \
+		lrelease6 translations/*.ts; \
+	elif command -v lrelease >/dev/null 2>&1; then \
+		echo "compiling translations with lrelease"; \
+		lrelease translations/*.ts; \
+	elif [ -x /usr/lib/qt6/bin/lrelease ]; then \
+		echo "compiling translations with /usr/lib/qt6/bin/lrelease"; \
+		/usr/lib/qt6/bin/lrelease translations/*.ts; \
+	else \
+		echo "lrelease not available - using the committed translations/*.qm"; \
+	fi

@@ -1,3 +1,15 @@
+sddm-theme-lingmo (1.5.0.lingmo.2) helium; urgency=medium
+
+  * Do not require lrelease at build time. The OBS build failed with
+    "lrelease6: not found" (exit 127) because that binary is not in the
+    build environment, even though qt6-l10n-tools is a build dependency.
+    debian/rules now compiles the catalogues when lrelease6, lrelease or
+    /usr/lib/qt6/bin/lrelease is available and otherwise keeps the
+    translations/*.qm that are committed in the source tree, so the
+    package always ships usable translations.
+
+ -- Lingmo OS Team <team@lingmo.org>  Wed, 14 Oct 2026 20:27:53 +0800
+
 sddm-theme-lingmo (1.5.0.lingmo.1) helium; urgency=medium
 
   * Initial packaging for Lingmo OS, based on SilentSDDM 1.5.0
