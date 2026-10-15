@@ -1,3 +1,18 @@
+sddm-theme-lingmo (1.5.0.lingmo.3) helium; urgency=medium
+
+  * Actually enable the theme on install: ship /etc/sddm.conf.d/10-lingmo-theme.conf
+    (a dpkg conffile) containing
+      [General] InputMethod=qtvirtualkeyboard
+                GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/lingmo/components/,QT_IM_MODULE=qtvirtualkeyboard
+      [Theme]   Current=lingmo
+    Without the [General] pair the greeter cannot resolve the theme's components/
+    directory (it overrides the virtual keyboard style) and SDDM silently falls
+    back to its default theme, so installing the package appeared to do nothing.
+    A snippet under /etc/sddm.conf.d/ is used instead of /etc/sddm.conf because
+    other SDDM themes write that file too.
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 13:11:16 +0800
+
 sddm-theme-lingmo (1.5.0.lingmo.2) helium; urgency=medium
 
   * Do not require lrelease at build time. The OBS build failed with

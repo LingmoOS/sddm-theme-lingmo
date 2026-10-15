@@ -12,3 +12,4 @@ docs/previews/default.png         usr/share/sddm/themes/lingmo/docs/previews
 fonts/redhat                      usr/share/fonts/truetype/redhat-display
 fonts/redhat-vf                   usr/share/fonts/truetype/redhat-display
 fonts/OFL.txt                     usr/share/doc/sddm-theme-lingmo
+debian/10-lingmo-theme.conf etc/sddm.conf.d/
