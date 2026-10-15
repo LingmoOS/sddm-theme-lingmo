@@ -1,10 +1,10 @@
 sddm-theme-lingmo (1.5.0.lingmo.3) helium; urgency=medium
 
-  * Actually enable the theme on install: ship /etc/sddm.conf.d/10-lingmo-theme.conf
-    (a dpkg conffile) containing
-      [General] InputMethod=qtvirtualkeyboard
-                GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/lingmo/components/,QT_IM_MODULE=qtvirtualkeyboard
-      [Theme]   Current=lingmo
+  * Actually enable the theme on install: ship
+    /etc/sddm.conf.d/10-lingmo-theme.conf (a dpkg conffile) containing
+    [General] InputMethod=qtvirtualkeyboard and GreeterEnvironment with
+    QML2_IMPORT_PATH=/usr/share/sddm/themes/lingmo/components/ plus
+    QT_IM_MODULE=qtvirtualkeyboard, and [Theme] Current=lingmo.
     Without the [General] pair the greeter cannot resolve the theme's components/
     directory (it overrides the virtual keyboard style) and SDDM silently falls
     back to its default theme, so installing the package appeared to do nothing.
